@@ -1,0 +1,59 @@
+{
+  "group": "defaultGroup",
+  "name": "Backendtest",
+  "display_order_weight": -1.0,
+  "label_template": "${COUNT}",
+  "lock_behavior": "none",
+  "environment_variables": [],
+  "parameters": [],
+  "materials": [
+    {
+      "url": "https://github.com/Rippling/formsy-react",
+      "branch": "master",
+      "shallow_clone": false,
+      "filter": {
+        "ignore": [],
+        "whitelist": []
+      },
+      "auto_update": true,
+      "type": "git"
+    }
+  ],
+  "stages": [
+    {
+      "name": "Setup",
+      "fetch_materials": true,
+      "never_cleanup_artifacts": false,
+      "clean_working_directory": false,
+      "approval": {
+        "type": "success",
+        "users": [],
+        "roles": [],
+        "allow_only_on_success": false
+      },
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "run",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "elastic_profile_id": "Backend",
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "sleep",
+              "timeout": -1.0,
+              "arguments": [
+                "1m"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
